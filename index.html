@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Curso de NodeJS 2015 de Escuela IT por @jonmircha</title>
+	
+	<meta name="description" content="Esta presentación contiene toda la teoría y es una referencia temática del Curso de NodeJS de Escuela IT impartido por Jonathan MirCha">
+	<meta name="author" content="Jonathan MirCha">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	
+	<link rel="stylesheet" href="css/jon.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="corner c-tl"><img src="img/escuela-it.png" alt="Escuela IT" style="max-width: 90%;" /></div>
+	<div class="corner c-tr"><img src="img/nodejs-logo.png" alt="Node.JS" style="max-width: 60%;" /></div>
+	<div class="corner c-bl"><p>Curso NodeJS 2015 de Escuela IT</p></div>
+	<div class="corner c-br"><p>por Jonathan MirCha - @jonmircha</p></div>
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>Curso NodeJS 2015</h1>
+				<div><img src="img/nodejs-logo.png" alt="Node.JS" style="border:0; box-shadow:none;" /></div>
+				<h2>de <a href="http://escuela.it/" target="_blank">Escuela IT</a></h2>
+				<p>por <a href="http://twitter.com/jonmircha" target="_blank">@jonmircha</a></p>
+			</section>
+			<section>
+				<figure>
+					<figcaption><a href="http://jonmircha.com" target="_blank">Jonathan MirCha</a></figcaption>
+					<img src="img/jonmircha.jpg" style="max-width: 80%;" border="0" alt="Jonathan MirCha" />
+				</figure>
+			</section>
+			<section>
+				<h2>Información del Curso</h2>
+				<ul>
+					<li>inicio: <b>16 Abril 2015</b></li>
+					<li>termina: <b>14 Mayo 2015</b></li>
+					<li><b>20</b> sesiones en <b>vivo</b></li>
+					<li>de <b>lunes</b> a <b>viernes</b></li>
+					<li>de <b>8pm</b> a <b>10pm</b> (<b>hora Madrid</b>)</li>
+					<li><a href="http://www.convertworld.com/es/zonas-horarias/" target="_blank">¿A qué hora será en mi ciudad?</a></li>
+					<li>viernes <b>1° Mayo NO</b> hay clases</li>
+					<li>hashtag: <a href="https://twitter.com/search?f=realtime&q=eitnode" target="_blank">#eitnode</a></li>
+					<li><a href="http://escuela.it/cursos/curso-de-nodejs/" target="_blank">+info</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Slides y Repositorio</h2>
+				<p>
+					<a href="https://jonmircha.github.io/nodejs" target="_blank">jonmircha.github.io/nodejs</a>
+					<br />
+					<a href="https://github.com/jonmircha/eit-nodejs-2015" target="_blank">github.com/jonmircha/eit-nodejs-2015</a>
+				</p>
+			</section>
+			<section>
+				<h2>Temas:</h2>
+				<ol>
+					<li>Presentación</li>
+					<li>Consideraciones</li>
+					<li>Introducción</li>
+					<li>El core de Node.JS</li>
+					<li>Aplicaciones Web</li>
+					<li>Persistencia de Datos</li>
+					<li>Comunicación Bidireccional</li>
+					<li>Node.JS en Producción</li>
+					<li>IO.JS</li>
+				</ol>
+			</section>
+			<section>
+				<h1>Consideraciones</h1>
+				<img src="img/node-is-coming.jpg" />
+			</section>
+			<section>
+				<ul>
+					<li>Conocimientos sólidos de JavaScript</li>
+					<li>¿No los tienes?...</li>
+					<li>No te preocupes XD da click <a href="http://cursos.bextlan.com/web" target="_blank">aquí</a></li>
+                    <li>Node.JS es <b>emergente</b> y <b>cambiante</b></li>
+                    <li>Sé <b>AUTODIDACTA</b></li>
+                    <li>Leé <b>documentación</b></li>
+                    <li>Aprende <b>inglés</b></li>
+                    <li>Debes manejar la <b>terminal de comandos</b> de tu S.O.</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Clase 1</h1>	
+			</section>
+			<section>
+				<h1>Introducción</h1>
+				<img src="img/why-so-asynchronous.jpg" style="max-width:50%;"/>
+			</section>
+			<section>
+				<h2>¿Qué es Node.JS?</h2>
+				<div class="dos-columnas">
+					<ul>
+						Lo que todos sabemos
+						<li>Tiene JS</li>
+						<li>Es Backend</li>
+						<li>¿Algo que ver con NoSQL?</li>
+						<li>Sirve para hacer chats</li>
+					</ul>
+				</div>
+				<div class="dos-columnas">
+					<ul>
+						Lo que no está tan claro
+						<li>¿Es un framework JS?</li>
+						<li>¿Es una librería?</li>
+						<li>¿Qué tiene que ver v8?</li>
+						<li>¿Para qué sirve?<br />(<small>además de chats</small>)</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<blockquote>
+					Node.js® is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+				</blockquote>
+				<h3 class="fragment">WTF!!!</h3>
+			</section>
+			<section>
+				<h2>¿Entonces?</h2>
+				<ul>
+					Si...
+					<li><b>Ruby</b> tiene <b>Rails</b></li>
+					<li><b>Python</b> tiene <b>Django</b></li>
+					<li><b>PHP</b> tiene <b>Laravel</b></li>
+					<br />
+					<li class="fragment"><b>JS</b> ¿tiene a <b>Node.JS</b>?</li>
+				</ul>
+			</section>
+			<section>
+				<h1>¡¡¡NO!!!</h1>
+				<h2>no es un Framework</h2>
+			</section>
+			<section>
+				<h1>Es una entorno de programación</h1>
+			</section>
+			<section>
+				<h3>Características de un <b>lenguaje de programación</b></h3>
+				<ul>
+					<li>Una gramática que define su sintaxis</li>
+					<li>Un compilador que lo interpreta y ejecuta</li>
+					<li>Mecanismos para interactuar con el exterior</li>
+					<li>Librería estándar (<small>consola, ficheros, red, etc.</small>)</li>
+					<li>Utilidades (<small>intérprete, depurador, paquetes, etc.</small>)</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Características de un <b>lenguaje de programación</b></h3>
+				<ul>
+					<ul>
+						<li>
+							V8
+							<ul>
+								<li>Una gramática que define su sintaxis</li>
+								<li>Un compilador que lo interpreta y ejecuta</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							Node.JS
+							<ul>
+								<li>Mecanismos para interactuar con el exterior</li>
+								<li>Librería estándar (<small>consola, ficheros, red, etc.</small>)</li>
+								<li>Utilidades (<small>intérprete, depurador, paquetes, etc.</small>)</li>
+							</ul>
+						</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Node.JS</th>
+							<th>Ruby</th>
+							<th>Python</th>
+							<th>PHP</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Lenguaje</td>
+							<td>JavaScript</td>
+							<td>Ruby</td>
+							<td>Python</td>
+							<td>PHP</td>
+						</tr>
+						<tr>
+							<td>Motor</td>
+							<td>V8</td>
+							<td>YARV</td>
+							<td>cPython</td>
+							<td>Apache</td>
+						</tr>
+						<tr>
+							<td>Entorno</td>
+							<td>Módulos del core</td>
+							<td>Librerias Standard</td>
+							<td>Librerias Standard</td>
+							<td>Librerias Standard</td>
+						</tr>
+						<tr>
+							<td>Frameworks</td>
+							<td>Express</td>
+							<td>Rails</td>
+							<td>Django</td>
+							<td>Laravel</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section>
+				<h1>En síntesis</h1>
+			</section>
+			<section>
+				<h2>¿Qué es Node.JS?</h2>
+				<ul>
+					<li>Plataforma de desarrollo de software creada en 2009</li>
+					<li>JavaScript en el lado del servidor</li>
+					<li>Basado en la máquina virtual de Chrome (<small>V8 JavaScript Runtime</small>)
+					</li>
+					<li>V8 esta escrito en C (<small>muy rápido</small>)</li>
+					<li>Multiplataforma (<small>Windows, Macintosh, Linux, etc.</small>)</li>
+					<li>Es una <a href="https://www.joyent.com/" target="_blank">marca registrada</a> y es <a href="https://github.com/joyent/node" target="_blank">open source</a></li>
+					<li>Asíncrono y orientado a eventos</li>
+					<li>Ideal para aplicaciones que consumen datos en tiempo real y que se ejecutan a través de dispositivos distribuidos</li>
+					<li>Lo <a href="https://github.com/joyent/node/wiki/Projects,-Applications,-and-Companies-Using-Node" target="_blank">usan</a> muchas empresas (<small>WalMart, Paypal, Yahoo, LinkedIn, eBay, etc.</small>)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Infraestructura</h2>
+				<div>
+					<img src="img/nodejs-platform.png" />
+				</div>
+			</section>
+			<section>
+				<h2>¿Por qué JavaScript?</h2>
+				<div class="dos-columnas">
+					<i>JavaScript has certain characteristics that make it very different than other dynamic languages, namely that it has no concept of threads. Its model of concurrency is completely based around events</i>
+				</div>
+				<figure class="dos-columnas">
+					<img src="img/ryan-dahl.jpg" />
+					<figcaption><a href="https://github.com/ry" target="_blank">Ryan Dahl</a></figcaption>
+				</figure>
+				<h3 class="fragment">WTF!!!</h3>
+			</section>
+			<section>
+				<h2>Lo que quizo decir es:</h2>
+				<ul class="dos-columnas">
+					<li>Compila directamente a código máquina sin un intérprete gracias a V8<br /><br /></li>
+					<li>Modelo I/O (<small>entrada/salida</small>) orientado a eventos, asíncrono y de no bloqueo, que lo hace ligero y eficiente</li>
+				</ul>
+				<div class="dos-columnas">
+					<img src="img/nodejs-work.jpg" />
+					<h3 class="fragment">WTF!!!</h3>
+				</div>
+			</section>
+			<section>
+				<h1>Entendamos</h1>
+				<h2>Paralelismo y Concurrencia</h2>
+				<h2>Bloqueante y No Bloqueante</h2>
+				<h2>Síncrono y Asíncrono</h2>
+			</section>
+			<section>
+				<div class="dos-columnas">
+					<ul>
+						<li>Paralelismo: varios objetos realizando una acción cada uno <b>simultáneamente</b>(<small>síncrono</small>)</li>
+						<li>Concurrencia: un solo objeto, con varias tareas “activas” entre las que va <b>alternando</b>(<small>asíncrono</small>)</li>
+						<br />
+					</ul>
+				</div>
+				<div class="dos-columnas">
+					<img class="fragment" src="img/malcolm.jpg" />
+					<a class="fragment" href="http://es.slideshare.net/rcostu/concurrencia-paralelismo" target="_blank">+info</a>
+				</div>
+			</section>
+			<section>
+				<h2>Node.JS es como un mesero</h2>
+				<div class="dos-columnas">
+					<ul>
+						<li>Es un <a href="http://es.wikipedia.org/wiki/Reactor_(patr%C3%B3n_de_dise%C3%B1o)" target="_blank">Patrón Reactor</a> del mundo real</li>
+						<li>Para aprovecharlo, tiene que haber varios clientes</li>
+						<li>Un cliente no termina más rápido por asignarle un mesero exclusivo</li>
+						<li>Cada cliente termina a su ritmo</li>
+					</ul>
+				</div>
+				<div class="dos-columnas">
+					<img src="img/nodejs-waiter.jpg" />
+				</div>
+			</section>
+			<section>
+				<h1>blocking<br />vs<br />non blocking</h1>
+			</section>
+			<section>
+				<h2>comensales vs meseros</h2>
+				<div>
+					<img src="img/comensales.jpg" style="max-width:60%;" />
+				</div>
+				<h3>blocking vs	non blocking</h3>
+			</section>
+			<section>
+				<h1>PHP vs Node.JS</h1>
+				<div>
+					<img src="img/nodejs-vs-php.jpg" />
+				</div>
+				<h2>blocking vs	non blocking</h2>
+			</section>
+			<section>
+				<h2>Infraestructura</h2>
+				<h3>PHP vs Node.JS</h3>
+				<div>
+					<img src="img/nodejs-vs-php-platform.png" />
+				</div>
+			</section>
+			<section>
+				<h2>Abriendo un fichero</h2>
+				<div class="dos-columnas">
+					<h3>Blocking</h3>
+					<ul>
+						<li>Abrir el archivo</li>
+						<li>Leer el archivo</li>
+						<li>Imprimir contenido</li>
+						<li>Hacer algo más</li>
+					</ul>
+				</div>
+				<div class="dos-columnas">
+					<h3>Non blocking</h3>
+					<ul>
+						<li>Abrir el archivo</li>
+						<li>
+							Leer el archivo
+							<ul>
+								<li>Cuando termines, imprimir contenido</li>
+							</ul>
+						</li>
+						<li>Hacer algo más</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2>Abriendo un fichero</h2>
+				<h3>PHP Blocking Code</h3>
+				<pre>
+					<code class="php">
+&lt;?php
+printf("Abriendo Archivo...<br />");
+$fichero_url = fopen("archivo.txt","r");
+
+$texto = "";
+
+while ($trozo = fgets($fichero_url)) {
+    $texto .= $trozo;
+}
+
+printf($texto);
+
+printf("<br />Haciendo otra cosa");
+?&gt;
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Abriendo un fichero</h2>
+				<h3>Node.JS Blocking Code</h3>
+				<pre>
+					<code class="javascript">
+var fs = require("fs");
+console.log("\nAbriendo Archivo...");
+
+var content = fs.readFileSync("archivo.txt","utf8");
+console.log(content);
+
+console.log("\nHaciendo otra cosa\n");
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>Abriendo un fichero</h2>
+				<h3>Node.JS Non Blocking Code</h3>
+				<pre>
+					<code class="javascript">
+var fs = require("fs");
+console.log("\nAbriendo Archivo...");
+ 
+var content = fs.readFile("archivo.txt","utf8", function(error,content){
+   console.log(content);
+});
+
+console.log("\nHaciendo otra cosa\n");
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h2>¿Cuál es la diferencia?</h2>
+				<h3 class="fragment">Callback</h3>
+				<div class="fragment">
+					<p>
+						Es una pieza de código ejecutable que se pasa como argumento a otro código.
+					</p>
+					<p>
+						Con la callback estamos logrando un comportamiento <b>asincrónico</b>, es decir, de <b>no bloqueo</b>
+					</p>
+					<p>
+						El código se ejecuta y no espera a que la lectura se complete, cuando esta termine se imprime el contenido.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2>Really Callbacks Dude?</h2>
+				<div class="dos-columnas">
+					<img src="img/callbacks.jpg" />
+				</div>
+				<div class="dos-columnas">
+					<img src="img/callback-dolphin.jpg" />
+				</div>
+			</section>
+			<section>
+				<h2>Callback Hell</h2>
+				<div class="dos-columnas">
+					<img src="img/callback-hell.png" />
+				</div>
+				<div class="dos-columnas">
+					<img src="img/callback-mac.jpg" style="max-width:80%;" />
+				</div>
+			</section>
+			<section>
+				<h2>Evitando Callback Hell</h2>
+				<pre>
+					<code class="javascript">
+var fs = require("fs");
+console.log("\nAbriendo Archivo...");
+
+function imprimir(error,content){
+   console.log(content);
+}
+ 
+var content = fs.readFile("archivo.txt","utf8", imprimir);
+
+console.log("\nHaciendo otra cosa\n");
+					</code>
+				</pre>
+				<p class="fragment">
+					(<small>también se puede con promesas</small>)
+				</p>
+			</section>
+			<section>
+				<h1>
+					Single Thread
+				</h1>
+			</section>
+			<section>
+				<h2>Event Loop</h2>
+				<div>
+					<img src="img/event-loop.png" style="max-width:80%;" />
+				</div>
+			</section>
+			<section>
+				<h2>Event Loop</h2>
+				<div>
+					<img src="img/event-loop-explain.png" />
+				</div>
+			</section>
+			<section>
+				<h2>Características de Node.JS</h2>
+				<ul>
+					<li>Es concurrente sin paralelismo</li>
+					<li>Es asíncrono y no bloqueante</li>
+					<li>Orientado a eventos</li>
+					<li>Single thread basado en callbacks</li>
+				</ul>
+				<div>
+					<img src="img/unique-thread.jpg" />
+				</div>
+			</section>
+			<section>
+				<h2>Si eres Frontend</h2>
+				<ul class="fragment">
+					<li>Es tu mejor opción para hacer <b>backend</b> por qué ya sabes <b>JavaScript</b> (<small>o deberías <div class="carita">XD</div></small>)</li>
+					<li>Si no te interesa el backend, sus <b>módulos</b> te harán mejor frontend (<small>bower, grunt, gulp, less, browserify, etc.</small>)</li>
+					<li>Si tu editor de código es <b>brackets</b> ya usas <b>Node.JS</b><div class="carita">=D</div></li>
+					<li>Puedes comenzar tu carrera como <b> Full Stack JavaScript Developer</b> (<small><a href="http://meanjs.org" target="_blank">MEAN.JS</a> o <a href="http://mean.io" target="_blank">MEAN.IO</a></small>)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>¿Entonces?</h2>
+				<div>
+					<img src="img/js-front-back.jpg" />
+				</div>
+			</section>
+			<section>
+				<h2>¿Qué podemos hacer?</h2>
+				<ul>
+					<li>Aplicaciones cliente - servidor</li>
+					<li>Aplicaciones servidor - servidor (<small>networking</small>)</li>
+					<li>Chats, Juegos, Clientes de Correo, Traductores</li>
+					<li>Aplicaciones Colaborativas y Redes Sociales</li>
+					<li>Estadísticas y Analíticas</li>
+					<li>Aplicaciones de Red (<small>línea de comandos o admin. de sistemas</small>)</li>
+					<li>Sitios Web, Blogs y CMS's</li>
+					<li>Controlar <a href="http://nodebots.io/" target="_blank">Hardware</a></li>
+					<li>En un futuro... dominar al mundo... \<div class="carita">}=D</div>/ de la web</li>
+				</ul>
+			</section>
+			<section>
+				<h2>No podrás decir qué no</h2>
+				<div class="dos-columnas">
+					<ul>
+						<li><b>Arquitectura unificada</b><br />(<small>JavaScript Full Stack</small>)</li>
+						<li>Código <b>reutilizable</b><br />(<small>frontend, backend y base de datos</small>)</li>
+						<li><b>Excelente</b> rendimiento y escalabilidad</li>
+						<li>Fuerte y apasionada <b>comunidad</b></li>
+						<li>Desarrolladores <b>felices</b>&nbsp;&nbsp;<div class="carita">:)</div></li>
+					</ul>
+				</div>
+				<div class="dos-columnas">
+					<img src="img/nodejs-sexy.jpg" />
+				</div>
+			</section>
+			<section>
+				<h2>Sólo considera qué...</h2>
+				<div class="dos-columnas">
+					<ul>
+						JS en el Frontend
+						<li>No me importa el S.O.</li>
+						<li>No hay datos binarios</li>
+						<li>Apenas hay E/S</li>
+						<li>Un único usuario</li>
+						<li>Todo es accesible con objetos y valores primitivos</li>
+					</ul>
+				</div>
+				<div class="dos-columnas">
+					<ul>
+						JS en el Backend
+						<li>Llamadas al S.O.</li>
+						<li>Muchos datos binarios</li>
+						<li>Muchas E/S</li>
+						<li>Usuarios y permisos</li>
+						<li>Puertos y Servidores</li>
+						<li>Middlewares</li>
+						<li>...</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2>Requisitos Clase 2</h2>
+			</section>
+			<section>
+				<h2>Instalación</h2>
+				<ul>
+					<li><a href="http://nodejs.org/" target="_blank">nodejs.org</a></li>
+					<br />
+					<li><a href="https://github.com/joyent/node/wiki/Installation" target="_blank">pasos a seguir</a></li>
+					<br />
+					<li>versión &gt; 0.10.0</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Probando Instalación</h2>
+				<ul>
+					<li>Abrir una terminal de comandos</li>
+					<li><b><code>node -v</code></b></li>
+					<li><b><code>npm -v</code></b></li>
+				</ul>
+				<br /><br />
+				<h2>Terminal de Comandos</h2>
+				<ul>
+					<li><a href="http://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/" target="_blank">Linux/Mac</a></li>
+					<li><a href="http://ss64.com/nt/index.html" target="_blank">Windows</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Recomendaciones</h2>
+				<ul>
+					<li>
+						Recuerda que para el correcto funcionamiento de Node.JS tu usuario debe ser <b>Administrador</b> del Equipo
+					</li>
+					<br />
+					<li>
+						Si tu terminal no reconoce los comandos:
+						<ul>
+							<li>
+								En Mac o Linux debes ejecutarlos con el comando <b><code>sudo</code></b>
+							</li>
+							<li>
+								En Windows, reinicia y verifica que en las variables de entorno exista <b>NODE_PATH</b>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Estudien:</h2>
+				<ul>
+					<li>
+						<a href="http://librosweb.es/ajax/capitulo_7.html" target="_blank">AJAX</a>
+					</li>
+					<li>
+						<a href="http://es.wikipedia.org/wiki/Anexo:Códigos_de_estado_HTTP" target="_blank">Códigos de Estado HTTP</a>
+					</li>
+					<li>
+						<a href="http://es.wikipedia.org/wiki/Multipurpose_Internet_Mail_Extensions" target="_blank">Extensiones MIME</a>
+					</li>
+					<li>
+						<a href="http://sites.utoronto.ca/webdocs/HTMLdocs/Book/Book-3ed/appb/mimetype.html" target="_blank">Tipos de MIME</a>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>BE NODE.JS</h2>
+				<div>
+					<img src="img/sending-message-nodejs.jpg" />
+				</div>
+			</section>
+			<section>
+				<h1>Clase 2</h1>
+			</section>
+			<section>
+				<h1>El core de Node.JS</h1>
+				<div>
+					<img src="img/core-nodejs.jpg" style="max-width:70%;" />
+				</div>
+			</section>
+			<section>
+				<p>
+					El núcleo de Node.JS esta formado por <b>35 módulos</b>
+				</p>
+				<p>
+					Es importante revisar su nivel de estabilidad al usarlos:
+					<ul>
+						<li>0 - Deprecated</li>
+						<li>1 - Experimental</li>
+						<li>2 - Unstable</li>
+						<li>3 - Stable</li>
+						<li>4 - API Frozen</li>
+						<li>5 - Locked</li>
+					</ul>
+				</p>
+				<p>
+					Toda la información del núcleo está en el <a href="https://nodejs.org/api/" target="_blank">API DOCS</a>
+				</p>
+			</section>
+			<section>
+				<h3>Menú del Día:</h3>
+				<ul>
+					<li><a href="https://nodejs.org/api/globals.html" target="_blank">Globals</a></li>
+					<li><a href="https://nodejs.org/api/process.html" target="_blank">Process</a></li>
+					<li><a href="https://nodejs.org/api/http.html" target="_blank">HTTP</a></li>
+					<li><a href="https://nodejs.org/api/buffer.html" target="_blank">Buffer</a></li>
+					<li><a href="https://nodejs.org/api/stream.html" target="_blank">Stream</a></li>
+					<li><a href="https://nodejs.org/api/fs.html" target="_blank">File System</a></li>
+					<li><a href="https://nodejs.org/api/events.html" target="_blank">Events</a></li>
+					<li><a href="https://nodejs.org/api/util.html" target="_blank">Util</a></li>
+					<li><a href="https://nodejs.org/api/timers.html" target="_blank">Timers</a></li>
+					<li><a href="https://nodejs.org/api/modules.html" target="_blank">Módulos (<small>require/exports</small>)</a></li>
+				</ul>
+			</section>
+			<section>
+				<h1>Clase 3</h1>
+			</section>
+			<section>
+				<h1>Más core</h1>
+				<div>
+					<img src="img/mas-core-nodejs.jpg" />
+				</div>
+			</section>
+			<section>
+				<h3>Menú del Día:</h3>
+				<ul>
+					<li><a href="https://nodejs.org/api/path.html" target="_blank">Path</a></li>
+					<li><a href="https://nodejs.org/api/url.html" target="_blank">URL</a></li>
+					<li><a href="https://nodejs.org/api/querystring.html" target="_blank">Query String</a></li>
+					<li>Servir archivos estáticos</li>
+					<li>Rutas y URL's amigables</li>
+					<li>Cliente HTTP</li>
+					<li>Sniffer</li>
+					<li>Formularios</li>
+					<li>GET y POST</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Clase 4</h1>
+			</section>
+			<section>
+				<h3>Menú del Día:</h3>
+				<ul>
+					<li><a href="https://nodejs.org/api/path.html" target="_blank">Path</a></li>
+					<li><a href="https://nodejs.org/api/url.html" target="_blank">URL</a></li>
+					<li><a href="https://nodejs.org/api/querystring.html" target="_blank">Query String</a></li>
+					<li>Servir archivos estáticos</li>
+					<li>Rutas y URL's amigables</li>
+					<li>Cliente HTTP</li>
+					<li>Sniffer</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: false,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

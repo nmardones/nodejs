@@ -705,6 +705,263 @@ console.log("\nHaciendo otra cosa\n");
 			<section>
 				<h1>Clase 4</h1>
 			</section>
+			<section>
+				<h1>Clase 4</h1>
+			</section>
+			<section>
+				<h3>Menú del Día:</h3>
+				<ul>
+					<li>NPM</li>
+					<li>Módulos / Paquetes</li>
+					<li>El archivo <b>package.json</b></li>
+					<li>Promesas</li>
+				</ul>
+			</section>
+			<section>
+				<h2><a href="https://www.npmjs.com/" target="_blank">NPM</a></h2>
+				<p><b>Node Package Manager</b></p>
+				<p>Es el gestor de paquetes de Node.JS</p>
+			</section>
+			<section>
+				<h2>Instalando paquetes</h2>
+				<h3>Tipos de Instalación</h3>
+			</section>
+			<section>
+				<ul>
+					<li>
+						Única: <code>npm install nombre-paquete</code> (<small>no se recomienda</small>)
+					</li>
+					<br />
+					<li class="fragment">
+						Global: <code>npm install nombre-paquete <b>-g</b></code>
+					</li>
+					<br />
+					<li class="fragment">
+						Como dependencia del proyecto:<br />
+						<code>npm install nombre-paquete <b>--save</b></code>
+					</li>
+					<br />
+					<li class="fragment">	
+						Como dependencia de desarrollo:<br />
+						<code>npm install nombre-paquete <b>--save-dev</b></code>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Paquetes Globales</h2>
+				<ul>
+					<li>Se instalan localmente en nuestro ordenador</li>
+					<li>Estan disponibles en todo momento</li>
+					<li>Son paquetes que nos ayudarán con tareas administrativas (<small>monitoreo, depuración, automatización, etc.</small>)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Paquetes Globales</h2>
+				<ul>
+					<li>
+						<a href="https://www.npmjs.com/package/node-inspector" target="_blank">node-inspector</a>
+						<code class="fragment">(<small>node-debug miArchivo.js</small>)</code>
+					</li>
+					<li>
+						<a href="https://www.npmjs.com/package/supervisor" target="_blank">supervisor</a>
+						<code class="fragment">(<small>supervisor miArchivo.js</small>)</code>
+					</li>
+					<li>
+						<a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a>
+						<code class="fragment">(<small>nodemon miArchivo.js</small>)</code>
+					</li>
+					<li>
+						<a href="https://www.npmjs.com/package/forever" target="_blank">forever</a>
+						<code class="fragment">(<small>forever start/stop miArchivo.js</small>)</code>
+					</li>
+					<li>
+						<a href="https://www.npmjs.com/package/pm2" target="_blank">pm2</a>
+						<code class="fragment">(<small>pm2 start/stop miArchivo.js</small>)</code>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Dependencias del Proyecto</h2>
+				<ul>
+					<li>Paquetes externos al <b>core</b></li>
+					<li>Desarrollados por la comunidad</li>
+					<li>Al instalarlos quedan registrados en el achivo de configuración (<small><code>package.json</code></small>)</li>
+				</ul>
+			</section>
+			<section>
+				<h2 style="text-transform: lowercase !important">
+					<a href="https://docs.npmjs.com/files/package.json" target="_blank">package.json</a>
+				</h2>
+				<ul>
+					<li class="fragment">creación (<small><code>npm init</code></small>)</li>
+					<li class="fragment"><a href="http://browsenpm.org/package.json" target="_blank">configuración</a></li>
+					<li class="fragment">
+						instalar paquetes como dependencias:<br />
+						<small><code>npm install nombre-paquete <b>--save</b></code></small>
+					</li>
+					<li class="fragment">
+						instalar dependencias de un proyecto:<br />
+						<small><code>npm install</code></small><br />
+						(<small>Debe existir el archivo package.json</small>)
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Paquetes como dependencias</h2>
+				<ul>
+					<li>Subir Archivos
+						<ul>
+							<li><a href="https://www.npmjs.com/package/formidable" target="_blank">formidable</a></li>
+							<li><a href="https://www.npmjs.com/package/fs-extra" target="_blank">fs-extra</a></li>		
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p>Node.js maneja la asincronía utilizando callbacks</p>
+				<ul>
+					<li>Continuaciones explícitas como funciones</li>
+					<li>Cuando termines... ejecuta otra función</li>
+				</ul>
+			</section>
+			<section>
+				<p>Los callbacks tienen muchas ventajas</p>
+				<ul>
+					<li>Muy fáciles de entender e implementar</li>
+					<li>Familiares para el programador JS</li>
+					<li>Extremadamente flexibles</li>
+					<li>Un mecanismo universal de asincronía</li>
+				</ul>
+			</section>
+			<section>
+				<h1>PERO...</h1>
+			</section>
+			<section>
+				<h2><a href="http://callbackhell.com" target="_blank">Callback Hell</a></h2>
+				<div class="dos-columnas">
+					<img src="img/callback-hell.png" />
+				</div>
+				<div class="dos-columnas">
+					<img src="img/callback-mac.jpg" style="max-width:80%;" />
+				</div>
+			</section>
+			<section>
+				<h2>Callbacks VS Promesas</h2>
+				<div>
+					<img src="img/callbacks-vs-promise.png" />
+				</div>
+			</section>
+			<section>
+				<h2>Promesas</h2>
+				<p>Una manera alternativa de modelar asincronía</p>
+				<ul>
+					<li>Construcción explícita del flujo de ejecución</li>
+					<li>Separación en bloques consecutivos</li>
+					<li>Manejo de errores más controlado</li>
+					<li>Combinación de diferentes flujos asíncronos</li>
+				</ul>
+			</section>
+			<section>
+				<h2>promesa = flujo de ejecución</h2>
+			</section>
+			<section>
+				<h2>Promesas</h2>
+				<h3>Ventajas</h3>
+				<ul>
+					<li>Código mucho más ordenado y legible</li>
+					<li>Mejor control de errores</li>
+					<li>Podemos manipular el flujo</li>
+					<li>Añadir nuevas etapas</li>
+					<li>Devolverlo en funciones</li>
+					<li>Pasarlo como parámetro</li>
+					<li>Podemos combinar varios flujos</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Promesas</h2>
+				<h3>¿Cómo lo hace?</h3>
+			</section>
+			<section>
+				<ul>
+					<li>
+						.then(succes,[error])
+						<ul>
+							<li>Concatena bloques</li>
+							<li>
+								El nuevo bloque (success)...
+								<ul>
+									<li>Sólo se ejecuta si el anterior lo hace sin errores</li>
+									<li>Recibe como parámetro el resultado del bloque anterior</li>
+									<li>
+										Devuelve el valor que se le pasará al siguiente bloque
+										<ul>
+											<li>Si es un dato, se pasa tal cual</li>
+											<li>Si es una promesa, se resuelve</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						.fail(error)
+						<ul>
+							<li>El segundo parámetro es un manejador de error</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p>Las promesas se resuelven o se rechazan y se dividen en 2:</p>
+				<ul>
+					<li>
+						La promesa en sí
+						<ul>
+							<li>Interfaz que construye flujos</li>
+							<li>(<small>.then y .fail</small>)</li>
+						</ul>
+					</li>
+					<li>
+						Su diferido
+						<ul>
+							<li>Interfaz que controla los flujos</li>
+							<li>(<small>.reject y .resolve</small>)</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p>Casi todos los módulos de Node.JS que realizan una operación asíncrona siguen el mismo flujo:</p>
+				<ul>
+					<li>Reciben una callback como último parámetro</li>
+					<li>
+						El callback recibe uno o más parámetros:
+						<ul>
+							<li>
+								Generalmente el primero indica si hay error:
+								<ul>
+									<li>Si es falso todo OK</li>
+									<li>Si es verdadero es el Error</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Paquetes como dependencias</h2>
+				<ul>
+					<li>Promesas
+						<ul>
+							<li><a href="https://www.npmjs.com/package/q" target="_blank">q</a></li>
+							<li><a href="https://github.com/kriskowal/q/wiki/API-Reference" target="_blank">API q</a></li>	
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Clase 5</h1>
+			</section>
 		</div>
 	</div>
 	<script src="lib/js/head.min.js"></script>
